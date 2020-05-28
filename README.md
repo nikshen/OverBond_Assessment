@@ -14,11 +14,11 @@ You may use any language you are comfortable with, as long as it is quick and si
 
 Given a JSON file which will define an array of **bond** objects (of arbitrary size), write a **command line tool** to calculate the **spread** between each **corporate bond** and the nearest **government bond** benchmark, save these results in a JSON file, and express the spread in **basis points**, or **bps**. If any properties are missing from a bond object, do not include it in your calculations or output.
 
-**Spread** is defined as the difference between the yield of a corporate bond and its government bond benchmark. 
+**Spread** is defined as the difference between the yield of a corporate bond and its government bond benchmark.
 
-A government bond is a good **benchmark** if it is as close as possible to the corporate bond in terms of **years to maturity**, also known as **term** or **tenor**. 
+A government bond is a good **benchmark** if it is as close as possible to the corporate bond in terms of **years to maturity**, also known as **term** or **tenor**.
 
-If there is a *tie* for closest government bond by **tenor**, break the tie by choosing the government bond with the *largest* **amount outstanding**. 
+If there is a *tie* for closest government bond by **tenor**, break the tie by choosing the government bond with the *largest* **amount outstanding**.
 
 To convert your difference to **basis points**, just scale your spread by 100 and display as an integer (truncate trailing decimals), e.g. if your spread comes out to 2.127, this will be expressed in your output file as "212 bps".
 
@@ -103,16 +103,6 @@ See `sample_output.json`, or example above. You must follow the file structure e
 
 ## Further requirements
 
-### Docker
-
-You must **create and fill out a working** `Dockerfile` in the directory of your solution, that will handle the building and dependencies for your final executable.
-
-Your final executable should be setup as an entrypoint so that we can automatically pass in the paths for your program to process input from and write output to.
-
-You must set your `WORKDIR` to be `/submission`, make sure to copy your files there, in your container. This is important because we will be setting up volumes on our end, and would like to reason about your file system.
-
-If the build fails, or the Dockerfile does not accept arguments to your program (e.g. via `docker run sde-test-image input_file.json output_file.json`), then **we will be unable to grade your submission** for correctness.
-
 ### Testing
 
 Code in production should be tested, as this guarantees expected behaviour and functionality, as well as  making it safer to modify implementations while knowing behaviour remains the same. Do your best to **write some insightful automated tests** for your command line program.
@@ -120,6 +110,16 @@ Code in production should be tested, as this guarantees expected behaviour and f
 ### Documentation
 
 **Replace this README file with your own**. Write documentation on your submission such that someone can read it and immediately understand CLI arguments, inputs and outputs, behaviours, and reasoning behind design decisions that went into your solution, and any trade-offs. Discuss the run time complexity of your main calculation.
+
+### Docker
+
+To help make assessment easier, you should **create and fill out a working** `Dockerfile` in the directory of your solution, that will handle the building and dependencies for your final executable.
+
+Your final executable should be setup as an entrypoint so that we can automatically pass in the paths for your program to process input from and write output to.
+
+You must set your `WORKDIR` to be `/submission`, make sure to copy your files there, in your container. This is important because we will be setting up volumes on our end, and would like to reason about your file system.
+
+If Docker is too much of a constraint, another container is still appreciated, or at the very least clear instructions on how to run the submission.
 
 ## Evaluation
 
