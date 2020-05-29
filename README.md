@@ -8,11 +8,11 @@ The purpose of this test is to evaluate your:
 - coding style
 - ability to containerize a solution using Docker
 
-You may use any language you are comfortable with, as long as it is quick and simple to execute in Docker.
+You may use any language you are comfortable with, as long as it is quick and simple to execute in Docker. If you're unfamiliar with Docker, just **be sure that your submission can be run within the command line**.
 
 ## Problem description
 
-Given a JSON file which will define an array of **bond** objects (of arbitrary size), write a **command line tool** to calculate the **spread** between each **corporate bond** and the nearest **government bond** benchmark, save these results in a JSON file, and express the spread in **basis points**, or **bps**. If any properties are missing from a bond object, do not include it in your calculations or output.
+Given a JSON file which will define an array of **bond** objects (of arbitrary size), write a **command-line tool** to calculate the **spread** between each **corporate bond** and the nearest **government bond** benchmark, save these results in a JSON file, and express the spread in **basis points**, or **bps**. If any properties are missing from a bond object, do not include it in your calculations or output.
 
 **Spread** is defined as the difference between the yield of a corporate bond and its government bond benchmark.
 
@@ -81,9 +81,9 @@ The best benchmark for bond `c1` is `g1`, since the absolute difference in their
 
 The bond `c2` is not included in the output because it is missing a property, `yield`. If *any* properties are missing from a bond object, *do not include it in the calculation and output*. You may assume you will always have at least one valid government bond and at least one valid corporate bond, for all inputs.
 
-## Command line interface
+## Command-line interface
 
-To make this challenge easier to work on, and easier for us to evaluate, you must implement a specific command line interface for your program, *regardless of which language you use*. For example, let the name of your executable be `sde-test-solution`, then your program should accept and use the following arguments only.
+To make this challenge easier to work on, and easier for us to evaluate, you must implement a specific command-line interface for your program, *regardless of which language you use*. For example, let the name of your executable be `sde-test-solution`, then your program should accept and use the following arguments only.
 
 `$ sde-test-solution input_file.json output_file.json `
 
@@ -105,7 +105,7 @@ See `sample_output.json`, or example above. You must follow the file structure e
 
 ### Testing
 
-Code in production should be tested, as this guarantees expected behaviour and functionality, as well as  making it safer to modify implementations while knowing behaviour remains the same. Do your best to **write some insightful automated tests** for your command line program.
+Code in production should be tested, as this guarantees expected behaviour and functionality, as well as  making it safer to modify implementations while knowing behaviour remains the same. Do your best to **write some insightful automated tests** for your command-line program.
 
 ### Documentation
 
@@ -113,13 +113,13 @@ Code in production should be tested, as this guarantees expected behaviour and f
 
 ### Docker
 
-To help make assessment easier, you should **create and fill out a working** `Dockerfile` in the directory of your solution, that will handle the building and dependencies for your final executable.
+To help make assessment easier, you should **create and fill out a working** `Dockerfile` in the directory of your solution, that will handle the building your final executable and its dependencies.
 
 Your final executable should be setup as an entrypoint so that we can automatically pass in the paths for your program to process input from and write output to.
 
 You must set your `WORKDIR` to be `/submission`, make sure to copy your files there, in your container. This is important because we will be setting up volumes on our end, and would like to reason about your file system.
 
-If Docker is too much of a constraint, another container is still appreciated, or at the very least clear instructions on how to run the submission.
+**Note:** If you cannot run/test your submission in Docker locally, please include a Dockerfile at least. If you do not know Docker, please list dependencies involved to develop and run your submission in your documentation.
 
 ## Evaluation
 
