@@ -37,6 +37,8 @@ The code was tested varying the inputs in the 'sample_input.json' file to test t
 2. If the differnece  or deviation is same and the outstanding amount is also same, the logic will pick the first occuring id
 3. The code does not handle formating issues, i.e. $ instead of %  or blank spaces instead of NULL etc. 
 
+PL Used: Python
+Environment: Jupyter notebook
 
               
 
