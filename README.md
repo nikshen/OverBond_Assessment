@@ -1,5 +1,5 @@
 # SDE Online Assessment
-Submitted by: Nikhil Shenoy (nikhilshenoy89@gmail.com) 
+Submitted by: Nikhil Shenoy
 Date of Submission: 06/28/2020
 
 ** OBJECTIVE **
